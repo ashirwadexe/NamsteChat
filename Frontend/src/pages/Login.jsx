@@ -130,8 +130,8 @@ const Login = () => {
               {/* Right Side */}
       
               <AuthImagePattern
-                title="Join Our Community"
-                subtitle="Connect with friends, share moments, and stay in touch with your loved ones."
+                title="Welcome Back😎"
+                subtitle="Sign in to continue your conversations and catch up with your messages."
               />
             </div>
 
