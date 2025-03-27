@@ -31,7 +31,7 @@ const SignUp = () => {
     e.preventDefault();
 
     const success = validateForm();
-    //sending form data to signup in signup fn
+    //sending formdata to signup in signup fn
     if(success === true) {
       signup(formData)
     }
@@ -142,7 +142,7 @@ const SignUp = () => {
               <p className='text-base-content/60'>
                 Already have an account ? {" "}
                 <Link to="/login" className='link link-primary'>
-                 Sign in
+                 Login
                 </Link>
               </p>
             </div>
@@ -154,7 +154,7 @@ const SignUp = () => {
         {/* Right Side */}
 
         <AuthImagePattern
-          title="Join Our Community🤖"
+          title="Join Our Community"
           subtitle="Connect with friends, share moments, and stay in touch with your loved ones."
         />
       </div>

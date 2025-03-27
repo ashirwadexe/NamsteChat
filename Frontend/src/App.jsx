@@ -15,17 +15,20 @@ import Profile from "./pages/Profile";
 import { useAuthStore } from "./store/useAuthStore";
 import { Loader } from "lucide-react";
 
-// Protected Route Component
-const ProtectedRoute = ({ children }) => {
-  const { authUser } = useAuthStore();
-  return authUser ? children : <Navigate to="/login" />;
-};
-
 // Public Route (Prevents logged-in users from accessing login/signup)
 const PublicRoute = ({ children, redirectTo }) => {
   const { authUser } = useAuthStore();
   return !authUser ? children : <Navigate to={redirectTo} />;
 };
+
+// Protected Route Component
+const ProtectedRoute = ({ children }) => {
+  const { authUser } = useAuthStore();
+  //if user is authenticated then keep them on the route otherwise redirect them to login page
+  return authUser ? children : <Navigate to="/login" />;
+};
+
+
 
 const App = () => {
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
@@ -67,7 +70,7 @@ const App = () => {
         <Route
           path="/signup"
           element={
-            <PublicRoute redirectTo="/login">
+            <PublicRoute redirectTo="/">
               <SignUp />
             </PublicRoute>
           }
